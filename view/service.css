@@ -1,0 +1,24 @@
+.jumbotron {
+    position: relative;
+    background: #000 url("img/japan.jpg") center center;
+    color: black;
+    width: 100%;
+    height: 260px;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;;
+}
+
+#main-content{
+	height:500px;
+}
+
+.container .row .col-md-7 h2{
+	width: 100px;
+} 
+
+#map{
+	height:500px;
+	position: relative;
+	background: #000 url("img/map.gif") center center;
+}
