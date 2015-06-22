@@ -11,17 +11,26 @@
 		<!-- internal css -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="stylesheets/style.css">
+		<!-- form css -->
+		<link rel="stylesheet" type="text/css" media="all" href="stylesheets/login.css">
+
+		<!-- js libraries for form -->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/jquery.leanModal.min.js"></script>
+		<!-- jQuery plugin leanModal under MIT License http://leanmodal.finelysliced.com.au/ -->
 	</head>
 	<body>
 
 		<!--****navbar***-->
 		<nav class="navbar navbar-default">
 			<div class = "container">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-left">
 					<li><a href="#"><img src ="images/pennyworth_logo.jpg" width="110px" height="30px"></a></li>
 					<li><a href="#">Discover</a></li>
 					<li><a href="#">Services</a></li>
-					<li><a href="#">Log In</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#loginmodal" id="modaltrigger">Log In</a></li>
 					<li><a href="#">Register</a></li>
 				</ul>
 			</div>
@@ -29,7 +38,23 @@
 
 		<!--****Landing***-->
 		<section id="landing">
-			<h1> Discover Your Community </h1>
+			<h1 class="landing_pg_header"> Discover Your Community </h1>
+			<br/>
+			<br/>
+			<br/>
+
+			<div id="loginmodal" style="display:none;">
+			    <h1>User Login</h1>
+			    <form id="loginform" name="loginform" method="post" action="index.html">
+			      <label for="username">Username:</label>
+			      <input type="text" name="username" id="username" class="txtfield" tabindex="1">
+			      
+			      <label for="password">Password:</label>
+			      <input type="password" name="password" id="password" class="txtfield" tabindex="2">
+			      
+			      <div class="text-center"><button type="submit" name="loginbtn" id="loginbtn" class="btn btn-primary hidemodal text-center" tabindex="3">Log In</button></div>
+			    </form>
+			</div>
 		</section>
 
 		<!--****Services***-->
@@ -81,6 +106,17 @@
 		<section id="footer">
 			
 		</section>
+
+		<!--****Javascript for displaying and hiding the form***-->
+		<script type="text/javascript">
+			$(function(){
+			  $('#loginform').submit(function(e){
+			    return false;
+			  });
+			  
+			  $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+			});
+		</script>
 	</body>
 
 

@@ -20,16 +20,22 @@ h1, h3, h4 {
 	background-color: #fff;
 }
 
+right_nav{
+	float:right;
+}
+
 /******Landing******/
 #landing {
-	background: url(../../images/sf.jpg) fixed center top no-repeat;
+	background: url(../images/sf.jpg) fixed center top no-repeat;
 	background-size: cover;
 	height:100%;
 	margin-top: -20px;
 }
 
-h1 {
+h1.landing_pg_header{
+	padding-top: 76px;
 	color: white;
+	font-size: 60px;
 }
 
 /******Services******/
