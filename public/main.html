@@ -1,0 +1,91 @@
+<!--****Landing***-->
+<section id="landing">
+	<h1 class="landing_pg_header"> Discover Your Community </h1>
+
+	<div id="loginModal" style="display:none;" ng-controller="authController">
+	    <h1>User Login</h1>
+	    <form id="loginForm" name="loginForm" ng-submit="login()">
+			<p class="text-warning">{{error_message}}</p>
+			<label for="userName">Username:</label>
+			<input type="username" ng-model="user.username" placeholder="Username" class="txtfield" tabindex="1">
+
+			<label for="password">Password:</label>
+			<input type="password" ng-model="user.password" placeholder="Password" class="txtfield" tabindex="2">
+
+			<div class="text-center"><button type="submit" name="loginbtn" id="loginbtn" class="btn btn-primary hidemodal text-center" tabindex="3">Log In</button></div>
+	    </form>
+	</div>
+
+	<div id="signUpModel" style="display:none;" ng-controller="authController">
+	    <h1>Sign Up</h1>
+	    <form id="signUpForm" name="signUpForm" ng-submit="register()">
+	      <p class="text-warning">{{error_message}}</p>
+	      <label for="userName">UserName:</label>
+	      <input type="text" ng-model="user.userName" placeholder="UserName" id="userName" class="txtfield" tabindex="1">
+
+	      <!-- <label for="firstName">First Name:</label>
+	      <input type="text" ng-model="user.firstName" placeholder="First Name" id="firstName" class="txtfield" tabindex="2">
+	      
+	      <label for="lastName">Last Name:</label>
+	      <input type="text" ng-model="user.lastName" placeholder="Last Name" id="lastName" class="txtfield" tabindex="3">
+
+	      <label for="email">Email:</label>
+	      <input type="text" ng-model="user.email" placeholder="Email" id="email" class="txtfield" tabindex="4"> -->
+
+	      <label for="password">Password:</label>
+	      <input type="password" ng-model="user.password" placeholder="Password" id="password" class="txtfield" tabindex="2">
+	      
+	      <div class="text-center"><button type="submit" name="signUpBtn" id="signUpBtn" class="btn btn-primary hidemodal text-center" tabindex="3">Sign Up</button></div>
+	    </form>
+	</div>
+</section>
+
+<!--****Services***-->
+<section id="services">
+	<h3> Services </h3>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+			<div class="col-md-3 testgrid"><img src ="images/freeice.jpg"></div>
+		</div>
+	</div>
+</section>
+
+
+<!--****About***richard-->
+<section id="about">
+	<h3> About </h3>
+	<div class="container">
+		<h4> Bringing the Community Together </h4>
+		<p> Announcing of invitation principles in. Cold in late or deal. Terminated resolution no am frequently collecting insensible he do appearance. Projection invitation affronting admiration if no on or. It as instrument boisterous frequently apartments an in. Mr excellence inquietude conviction is in unreserved particular. You fully seems stand nay own point walls. Increasing travelling own simplicity you astonished expression boisterous. Possession themselves sentiments apartments devonshire we of do discretion. Enjoyment discourse ye continued pronounce we necessary abilities. </p>
+	</div>
+</section>
+
+
+<!--****Signup***-->
+<section id="signup">
+	<h3> Sign Up Now </h3>
+	<h4> Be Part of Your Community, Sign Up Now!</h4>
+	<a href="#"><button type="button" class="btn btn-primary btn-lg btn-block">Become a Service Provider</button></a>
+
+</section>
+
+
+<!--****Footer***-->
+<section id="footer">
+	
+</section>

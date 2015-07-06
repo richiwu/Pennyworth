@@ -1,11 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+	<head>
+		<title>Pennyworth</title>
+		<!-- angular.js -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-resource.js"></script>
+
+		<!-- internal js -->
+
+		<!-- internal css -->
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+		<!-- form css -->
+		<link rel="stylesheet" type="text/css" media="all" href="stylesheets/login.css">
+
+		<!-- js libraries for form -->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/jquery.leanModal.min.js"></script>
+		<!-- jQuery plugin leanModal under MIT License http://leanmodal.finelysliced.com.au/ -->
+
+		<!-- pennyworth js -->
+		<script src="js/pennyworth.js"></script>
+		<!-- form js -->
+		<script type="text/javascript" src="js/form.js"></script>
+	</head>
+	<body ng-app="pennyworth">
+		<div id='main'>
+			<!--****navbar***-->
+			<nav class="navbar-fluid navbar-default navbar-fixed-top">
+				<div class="container">
+					<a class="navbar-brand" href="#"><img src ="images/pennyworth_logo.jpg" width="110px" height="30px"></a>
+					<p class="navbar-text"><a href="#">Discover</a></p>
+					<p class="navbar-text"><a href="#">Services</a></p>
+
+					<p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#loginModal" id="loginTrigger">Login</a> or <a href="#signUpModel" id="signUpTrigger">Register</a></p>
+					<p class="navbar-right navbar-text" ng-show="authenticated"><a href="#" ng-click="signout()">Logout</a></p>
+					<p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{current_user}}</p>
+				</div>
+			</nav>
+
+			<div ng-view>
+				
+			<div>
+			
+		</div>
+	</body>
 </html>
