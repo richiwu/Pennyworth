@@ -15,7 +15,12 @@ app.config(function($routeProvider){
     .when('/', {
       templateUrl: 'main.html',
       controller: 'mainController'
+    })
+    //the service page display
+    .when('/service', {
+      templateUrl: 'service.html'
     });
+
 });
 
 app.factory('postService', function($resource){
