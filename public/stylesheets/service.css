@@ -1,12 +1,23 @@
+.content{
+    width:85%;
+    margin: 0 auto;
+}
+
 .jumbotron {
+    color: #9AC29A;
     position: relative;
-    background: #000 url("img/japan.jpg") center center;
-    color: black;
+    background:url(../images/math.jpg) center center;
     width: 100%;
     height: 260px;
-    background-size: cover;
+    /*background-size: 100% 260px;*/
     overflow: hidden;
-    text-align: center;;
+    text-align: center;
+}
+
+#service-title{
+    font-size: 130px;
+    margin-top:20px;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 #main-content{
@@ -17,8 +28,69 @@
 	width: 100px;
 } 
 
-#map{
-	height:500px;
-	position: relative;
-	background: #000 url("img/map.gif") center center;
+.angular-google-map-container { 
+    height: 630px; 
+}
+
+#providers-option-container{
+    height:240px;
+    background-color: #CCFFFF;
+    margin-bottom: 30px;
+    padding: 20px 20px;
+}
+
+#option-distance, #option-price, #option-service{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.provider{
+    float: left;
+}
+
+.provider-img{
+    height:100px;
+    width:auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.provider-name{
+    margin: 0 auto;
+    border: 1px black red;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.rating{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bold{
+    font-weight: bold;
 }

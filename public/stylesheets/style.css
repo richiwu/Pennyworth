@@ -14,53 +14,154 @@ h1, h3, h4 {
 	text-align: center;
 }
 
+/********font*******/
+h1, h2,  h3, h4, h5, h6,  p, label, button {
+	font-family:'Hind', sans-serif;
+}
+
+::-webkit-input-placeholder {
+	font-family: 'Hind', sans-serif;
+}
+
+::-moz-placeholder {
+	font-family: 'Hind', sans-serif;
+}
+
+
 
 /******navbar******/
-.navbar {
+.navbar-fluid {
 	background-color: #fff;
 }
 
+.navbar-brand img{
+	margin-top: -6px;
+}
+
+.navbar-fluid a {
+	text-decoration: none;
+	color:#7CCCFD;
+	text-transform: capitalize;
+} 
+
+.navbar-fluid a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	padding: -2px;
+} 
+
+
 /******Landing******/
 #landing {
-	background: url(../../images/sf.jpg) fixed center top no-repeat;
+	background: url(../images/circle-of-hands.jpg) fixed center top no-repeat;
 	background-size: cover;
 	height:100%;
 	margin-top: -20px;
 }
 
-h1 {
-	color: white;
+h1.landing_pg_header{
+	padding-top: 320px;
+	color: #7CCCFD;
+	font-size: 60px;
+	margin-left: 130px;
 }
 
+.holder  {
+	margin-top: 200px;
+}
+
+
 /******Services******/
-.testgrid img {
-	height: 20%;
-	width: 50%;
-	margin-top: 10px;
-	margin-left: 10px;
+
+.cook_service {
+	background: url(../images/services/cook_service.jpg);
+	height: 400px;
+	width: 700px;
+}
+
+.tutor_service {
+	background: url(../images/services/tutor_service.jpg);
+	height: 200px;
+	width: 400px;
+}
+
+.clean_service{
+	background: url(../images/services/clean_service.jpg);
+	height: 180px;  
+	width: 400px;
+}
+
+.service_grid_2 {
+	margin-left: -20px;
+}
+
+.service_text {
+    color: #fff;
+    top: 50%;
+    position: relative;
+    font-weight: bolder;
+}
+
+#services a:hover {
+	text-decoration: none;
 }
 
 #services {
-	background-color: 
+	background-color: #edefed;
+	margin-top: -20px;
 }
+
+
 
 /******About******/
 #about {
-	background-color: #FFB2B2;
+	background-color: #edefed;
+	margin-top: -20px;
+	height: 100%;
 }
 
-h4 {
-	margin-top: 20px;
-	color: red;
+.about_image {
+	width: 40%;
+	height: 40%;
 }
 
-p {
 
-}
+
+
 
 /******Signup******/
-button {
-
+#signup a:hover {
+	text-decoration: none;
 }
 
+#signup {
+	background: url(../images/community_hands.jpg) fixed center top no-repeat;
+	margin-top: -20px;
+	height: 100%;
+}
+
+#signup button {
+	margin-top: -200px;
+}
+
+#holder_signup  {
+	margin-top: 300px;
+}
+
+#signup h1 {
+	color: #7CCCFD;
+}
+
+
 /******Footer******/
+
+#footer {
+	text-align: center;
+	background-color: #fff;
+	height: 100%;
+	margin-top: -15px;
+}
+
+#footer p {
+	color:#7CCCFD;
+}

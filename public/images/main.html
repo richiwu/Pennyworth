@@ -1,0 +1,153 @@
+<section id="landing">
+	<h1 class="landing_pg_header"> </h1>
+	<div class="holder"></div>
+
+</section>
+
+
+<!--****Services***-->
+<section id="services">
+	<br>
+	<h1> Services </h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 service_grid">
+				<a href="#">
+					<div class="cook_service">
+						<h2 class="service_text"> Cooking </h2>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-4 service_grid_2">
+				<div class="row">
+					<a href="#">
+						<div class="tutor_service">
+							<h2 class="service_text"> Tutoring </h2>
+						</div>
+					</a>
+				</div>
+				<div class="row">
+					<a href="#">
+						<div class="clean_service">
+							<h2 class="service_text"> Cleaning </h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+</section>
+
+
+<!--****About***richard-->
+<section id="about">
+	<h1> About </h1>
+	<div class="container">
+		<p> Pennyworth is an initiative we started to enhance community collaboration. <br> By knowing acknowledging all  the skils that people around you have, we can achieve things with much higher efficiencies! </p>
+		<div class="row">
+			<div class="col-md-4">
+				<img class="about_image" src="images/about_click.jpg">
+				<p> 1. &nbsp  Define Your Needs </p>
+			</div>
+			<div class="col-md-4">
+				<img class="about_image" src="images/about_question.jpg">
+				<p> 2. &nbsp Select the Service That Caters to You</p>
+			</div>
+			<div class="col-md-4">
+				<img class="about_image" src="images/about_search.jpg">
+				<p> 3. &nbsp Browse Through Your Community With Pennyworth To Find Help!</p>  
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+</section>
+
+
+<!--****Signup***-->
+<section id="signup">
+	<br>
+	<h1> Be a Part of Your Community, <br> Sign Up Now!</h1>
+		<div id="holder_signup"> </div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-4">
+			<a href="#signUpModel" id="signUpTrigger">
+				<button type="button" class="btn btn-primary btn-lg btn-block">Become a Service Provider</button>
+			</a>
+		</div>
+	</div>
+</section>
+
+
+<!--****Footer***-->
+<section id="footer">
+	<p> Copyright © 2015 Pennyworth. All Rights Reserved. </p>
+</section>
+
+<!-- loging and register modals -->
+	
+	<div id="loginModal" style="display:none;" ng-contsroller="authController">
+	    <h1>User Login</h1>
+	    <form 
+	    	id="loginForm" 
+	    	name="loginForm"  
+	    	action="/login" 
+	    	method="post">
+
+			<p class="text-warning">{{error_message}}</p>
+			<label for="userName">Username:</label>
+			<input type="text" name="email" placeholder="Username" class="form-control" tabindex="1">
+			<label for="password">Password:</label>
+			<input 
+				type="password" 
+				name="password" 
+				class="form-control" 
+				tabindex="2">
+
+			<div class="text-center">
+				<button 
+					type="submit" 
+					name="loginbtn" 
+					id="loginbtn" 
+					class="btn btn-primary hidemodal text-center" 
+					tabindex="3" 
+					ng-click="login()">
+					Log In
+				</button>
+			</div>
+	    </form>
+	</div>
+
+	<div id="signUpModel" style="display:none;" ng-controller="authController">
+	    <h1>Register</h1>
+	    <form id="signUpForm" name="signUpForm" action="/signup" method="post">
+		      <p class="text-warning">{{error_message}}</p>
+	<!-- 
+		      <label for="userName">Name:</label>
+		      <input type="text" ng-model="user.userName" id="userName" class="txtfield" tabindex="1"> -->
+
+		      <label for="Email">Email:</label>
+		      <input type="text" ng-model=""  id="" class="txtfield" tabindex="2" name="email">
+
+		      <label for="password">Password:</label>
+		      <input type="password" ng-model="user.password" id="password" class="txtfield" tabindex="2" name="password">
+		      
+		      <div class="text-center">
+		      	<button type="submit" name="signUpBtn" id="signUpBtn" class="btn btn-primary hidemodal text-center" tabindex="3">Register</button>
+		      </div>
+	    </form>
+	</div>
+
+		<!--****Javascript for displaying and hiding the form***-->
+<!-- 		// <script type="text/javascript">
+		// 	$(function(){
+		// 	  $('#loginform').submit(function(e){
+		// 	    return false;
+		// 	  });
+			  
+		// 	  $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+		// 	});
+		// </script> -->

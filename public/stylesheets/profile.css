@@ -1,0 +1,81 @@
+/*profile info*/
+h3 {
+	text-decoration: underline;
+	color: #686881;
+}
+
+.profile_img {
+	width: 90%;
+	height: 90%;
+}
+
+#profile {
+	margin-top: 80px;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+.profile_info{
+	text-align: center;
+}
+
+.info_list {
+	margin-top: 20px;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+#occupation{
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color:#FF0000;
+	color:#fff;
+
+}
+
+.fact_digit{
+	font-size:20px;
+	color: #9494B8;
+	margin-left: 20%;
+	margin-top: 10px;
+}
+
+/*profile content*/
+.fact_digit  {
+
+}
+
+.fav_serv img{
+	width: 90%;
+	height: 90%;
+}
+
+
+
+
+/*Profile Recommendations*/
+#rating_rec{
+	float:right;
+}
+
+.entry_form{
+	margin-bottom:70px;
+}
+
+.entry_form button {
+	margin-top: 10px;
+	float: right;
+}

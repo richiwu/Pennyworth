@@ -1,69 +1,248 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gardeners</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link href="../bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" href="service.css">
-    <link rel="stylesheet" type="text/css" href="slider/css/slider.css">
-   </head>
-  <body>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Pennyworth</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Log In</a></li>
-              <li><a href="#">Sign Up</a></li>
-              <li><a href="#">About</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-      <div class="jumbotron">
-        <div class="container">
-          <h1 id="service-title">GARDENERS in your community</h1>
-        </div>
-      </div>
-
+<div ng-app="service">
+    <div class="jumbotron">
       <div class="container">
-        <div class="row" id="main-content">
-          <div class="col-md-7">
-            <h2 class="col-md-1 col-md-offset-1">GARDENERS</h2>
-          </div>
-          <div id="map" class="col-md-5">
+        <h1 id="service-title">Math Tutors</h1>
+      </div>
+    </div>
 
+    <div class="content">
+      <div class="row" id="main-content">
+        <div class="col-md-7 providers-container">
+          <div id="providers-option-container">
+            <div class="row" id="option-service" ng-controller="selectorCtrl">
+              <div class="select-box">
+                <div class="col-md-2">
+                  <p class="bold">Service</p>
+                </div>
+                <div class="col-md-4">
+                  <p>{{person.selected.name}}</p>
+                </div>
+                <div class="col-md-6">
+                  <ui-select ng-model="person.selected" theme="select2" ng-disabled="disabled" style="min-width: 300px;" title="Choose a person" append-to-body="true">
+                    <ui-select-match placeholder="Select a Service you require">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                      <div ng-bind-html="person.name | highlight: $select.search"></div>
+                      <!-- <small>
+                        email: {{person.email}}
+                        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                      </small> -->
+                    </ui-select-choices>
+                  </ui-select>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div ng-controller="sliderCtrl">
+              <div id="option-distance" class="row">  
+                <div class="col-md-2">
+                  <p class="bold">Distance</p>
+                </div>
+                <div class="col-md-4">
+                  <p>{{slider1.val}} Kilometers</p>
+                </div>
+                <div class="col-md-6">
+                  <slider ng-model="slider1.val" min="1" max="100" step="1"></slider>
+                </div>
+              </div>
+              <hr>
+              <div id="option-price" class="row">
+                  <div class="col-md-2">
+                    <p class="bold">Price Range</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>${{slider2.val[0]}} to ${{slider2.val[1]}}</p>
+                  </div>
+                <div class="col-md-6">
+                  <slider ng-model="slider2.val"></slider>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="block-grid-lg-3 block-grid-md-3 block-grid-sm-2">
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            <div class="provider block-grid-item">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <input class="rating-input" type="number" value="4" data-show-caption="false" />
+                </div>
+            </div> 
+
+            
+          </div>       
+        </div>
+        <div id="map-column" class="col-md-5" ng-controller="mapCtrl">
+           <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
         </div>
 
-
-
-
-        <hr>
-        <footer>
-        <p>&copy; Wu-Tan 2015</p>
-        </footer>
       </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-    <!--bootstrap slider-->
-    <script src="slider/js/bootstrap-slider.js"></script>
-  </body>
-</html>
+      <hr>
+      <footer class="row">
+        <div class="col-md-12">
+           <p>&copy; Wu-Tan 2015</p>
+        </div>
+      </footer>
+    </div>
+</div>
