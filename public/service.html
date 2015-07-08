@@ -57,8 +57,6 @@
     <link rel="stylesheet"  href="stylesheets/select.min.css" type="text/css">
     <!-- for selector js -->
     <script src="js/select.min.js"></script>
-    <!-- for selector controller -->
-    <script src="js/selector-controller.js"></script>
     <!-- Select2 theme -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
     <!-- font for header image in math tutor -->
@@ -77,7 +75,12 @@
     <link href="stylesheets/star-rating.min.css" rel="stylesheet" type="text/css" />
     <!-- grid layout css -->
     <link href="stylesheets/block-grid.css" rel="stylesheet" type="text/css" />
-    
+
+    <script src="js/service.js"></script>
+    <script src="js/controller/gmap.js"></script>
+    <script src="js/controller/slider.js"></script>
+    <script src="js/controller/selector.js"></script>
+
     <script>
     jQuery(document).ready(function () {     
         $('.rating-input').rating({
@@ -91,7 +94,7 @@
     });
 </script>
   </head>
-  <body ng-app="myapp">
+  <body ng-app="service">
       <!--****navbar***-->
       <nav class="navbar-fluid navbar-default navbar-fixed-top">
         <div class="container">
@@ -115,7 +118,7 @@
         <div class="row" id="main-content">
           <div class="col-md-7 providers-container">
             <div id="providers-option-container">
-              <div class="row" id="option-service" ng-controller="DemoCtrl">
+              <div class="row" id="option-service" ng-controller="selectorCtrl">
                 <div class="select-box">
                   <div class="col-md-2">
                     <p class="bold">Service</p>
@@ -138,7 +141,7 @@
                 </div>
               </div>
               <hr>
-              <div ng-controller="sliderdemoCtrl">
+              <div ng-controller="sliderCtrl">
                 <div id="option-distance" class="row">  
                   <div class="col-md-2">
                     <p class="bold">Distance</p>
