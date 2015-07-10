@@ -27,6 +27,11 @@ app.config(function($routeProvider){
       templateUrl: 'service.html',
       // controller: 'authController'
     })
+    //the profile display
+    .when('/profile', {
+      templateUrl: 'profile.html',
+      // controller: 'authController'
+    })
 });
 
 
