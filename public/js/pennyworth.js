@@ -1,4 +1,4 @@
-var app = angular.module('pennyworth', ['ngRoute', 'ngResource', 'selector', 'slider','gmap']).run(function($http, $rootScope){
+var app = angular.module('pennyworth', ['ngRoute', 'ngResource', 'selector', 'slider','gmap','star-rating']).run(function($http, $rootScope){
 	$rootScope.authenticated = false;
 	$rootScope.current_user = "";
 
@@ -15,31 +15,18 @@ var app = angular.module('pennyworth', ['ngRoute', 'ngResource', 'selector', 'sl
 
 });
 
-// app.config(function($routeProvider){
-//   $routeProvider
-//     //the home page display
-//     .when('/', {
-//       templateUrl: 'main.html',
-//       controller: 'mainController'
-//     });
-// });
-
-// app.config(function($routeProvider){
-//   $routeProvider
-//     //the home page display
-//     .when('/', {
-//       templateUrl: 'profile.html',
-//       controller: 'mainController'
-//     });
-// });
-
 app.config(function($routeProvider){
   $routeProvider
     //the home page display
     .when('/', {
-      templateUrl: 'service.html',
+      templateUrl: 'main.html',
       controller: 'mainController'
-    });
+    })
+    //the service display
+    .when('/service', {
+      templateUrl: 'service.html',
+      // controller: 'authController'
+    })
 });
 
 

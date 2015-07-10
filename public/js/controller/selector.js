@@ -39,17 +39,6 @@ app.filter('propsFilter', function() {
   };
 });
 
-app.controller('sliderdemoCtrl', ['$scope',function($scope){
-
-    //set slider value as a number to have 1 slider
-    //all properties default values
-    $scope.slider1 = {val:10};
-    
-    //set value as an array to have 2 sliders
-    $scope.slider2 = { val:[16,100] };
-
-}]);
-
 app.controller('selectorCtrl', function($scope, $http, $timeout, $interval) {
   $scope.disabled = undefined;
   $scope.searchEnabled = undefined;
