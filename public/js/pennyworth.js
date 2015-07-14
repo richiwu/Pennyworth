@@ -15,24 +15,14 @@ var app = angular.module('pennyworth', ['ngRoute', 'ngResource', 'selector', 'sl
 
 });
 
-app.config(function($routeProvider){
-  $routeProvider
-    //the home page display
-    .when('/', {
-      templateUrl: 'main.html',
-      controller: 'mainController'
-    })
-    //the service display
-    .when('/service', {
-      templateUrl: 'service.html',
-      // controller: 'authController'
-    })
-    //the profile display
-    .when('/profile', {
-      templateUrl: 'profile.html',
-      // controller: 'authController'
-    })
-});
+// app.config(function($routeProvider){
+//   $routeProvider
+//     //the home page display
+//     .when('/', {
+//       templateUrl: 'main.html',
+//       controller: 'mainController'
+//     })
+// });
 
 
 // services

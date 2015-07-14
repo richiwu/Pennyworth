@@ -6,12 +6,9 @@ module.exports = function(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
-        res.render('index.ejs'); // load the index.ejs file
+        res.render('pages/index.ejs'); // load the index.ejs file
     });
 
-    app.get('/user', function(req, res){
-        res.render('index.ejs');
-    });
 
     // =====================================
     // LOGIN ===============================
@@ -45,8 +42,18 @@ module.exports = function(app, passport) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
+        res.render('pages/profile.ejs', {
             user : req.user // get the user out of session and pass to template
+        });
+    });
+
+    // =====================================
+    // SERVICE SECTION =====================
+    // =====================================
+
+
+        app.get('/service',  function(req, res) {
+        res.render('pages/service.ejs', {
         });
     });
 
