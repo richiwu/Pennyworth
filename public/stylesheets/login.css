@@ -114,3 +114,12 @@
 #signUpForm { /* no default styles */ }
 
 #signUpForm label { display: block; font-size: 1.1em; font-weight: bold; color: #7c8291; margin-bottom: 3px; }
+
+
+.login_content, .register_content  {
+  margin-top: 200px;
+}
+
+#login_message {
+  margin-top: 20px;
+}
