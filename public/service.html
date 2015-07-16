@@ -1,0 +1,284 @@
+ <div class="jumbotron">
+      <div class="container">
+        <h1 id="service-title">Math Tutors</h1>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="row" id="main-content">
+        <div class="col-md-7 providers-container">
+          <div id="providers-option-container">
+            <div class="row" id="option-service" ng-controller="selectorCtrl">
+              <div class="select-box">
+                <div class="col-md-2">
+                  <p class="bold">Service</p>
+                </div>
+                <div class="col-md-4">
+                  <p>{{person.selected.name}}</p>
+                </div>
+                <div class="col-md-6">
+                  <ui-select ng-model="person.selected" theme="select2" ng-disabled="disabled" style="min-width: 300px;" title="Choose a person" append-to-body="true">
+                    <ui-select-match placeholder="Select a Service you require">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                      <div ng-bind-html="person.name | highlight: $select.search"></div>
+                      <!-- <small>
+                        email: {{person.email}}
+                        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                      </small> -->
+                    </ui-select-choices>
+                  </ui-select>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div ng-controller="sliderCtrl">
+              <div id="option-distance" class="row">  
+                <div class="col-md-2">
+                  <p class="bold">Distance</p>
+                </div>
+                <div class="col-md-4">
+                  <p>{{slider1.val}} Kilometers</p>
+                </div>
+                <div class="col-md-6">
+                  <slider ng-model="slider1.val" min="1" max="100" step="1"></slider>
+                </div>
+              </div>
+              <hr>
+              <div id="option-price" class="row">
+                  <div class="col-md-2">
+                    <p class="bold">Price Range</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>${{slider2.val[0]}} to ${{slider2.val[1]}}</p>
+                  </div>
+                <div class="col-md-6">
+                  <slider ng-model="slider2.val"></slider>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-grid-lg-3 block-grid-md-3 block-grid-sm-2">
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            <div class="provider block-grid-item" ng-controller="starRatingCtrl">
+              <img src="images/emma.jpg" alt="Emma Watson is so pretty" class="img-circle provider-img">
+                <div class="caption">
+                  <h3 class="provider-name">Emma Watson</h3>
+                  <p class="provider-dsc">Hi, I love to teach young kids and help them explore their passion in Math</p>
+                  <star-rating ng-model="rating2" readonly="true"></star-rating>
+                </div>
+            </div> 
+          
+            
+
+            
+          </div>       
+        </div>
+        <div id="map-column" class="col-md-5" ng-controller="mapCtrl">
+           <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+        </div>
+
+      </div>
+      <hr>
+      <footer class="row">
+        <div class="col-md-12">
+           <p>&copy; Wu-Tan 2015</p>
+        </div>
+      </footer>
+    </div>

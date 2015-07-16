@@ -1,4 +1,8 @@
-<!-- google map api [this has to be loaded prior to ui.map]-->
+<!doctype html>
+<html>
+
+<head>
+	<!-- google map api [this has to be loaded prior to ui.map]-->
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFz5rNYFfhn2F7ffjhJuppahFQmPczp0I"></script>
 		<!-- angular.js -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
@@ -97,3 +101,28 @@
 	          });   
 	      });
 	    </script>
+</head>
+
+	<body ng-app="pennyworth">
+
+		<nav class="navbar-fluid navbar-default navbar-fixed-top">
+				<div class="container">
+					<a class="navbar-brand" href="/"><img src ="images/pennyworth_logo.jpg" width="110px" height="30px"></a>
+					<p class="navbar-text"><a href="#">Discover</a></p>
+					<p class="navbar-text"><a href="/service">Services</a></p>
+
+					<p class="navbar-right navbar-text" ng-hide="authenticated"><a href="/login">Login</a></p>
+					<p class="navbar-right navbar-text" ng-hide="authenticated"><a href="/signup">Register</a></p>
+					
+
+					<p class="navbar-right navbar-text" ng-show="authenticated"><a href="#" ng-click="signout()">Logout</a></p>
+					<p class="navbar-right navbar-text" ng-show="authenticated"><a href="/profile">Profile</a></p>
+					<p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{}}</p>
+				</div>
+		</nav>
+
+		<div ng-view>
+				
+		</div>
+	</body>
+</html>
