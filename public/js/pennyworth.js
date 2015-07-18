@@ -20,90 +20,55 @@ app.config(function($routeProvider){
     //the home page display
     .when('/', {
       templateUrl: 'main.html',
-      controller: 'mainController'
+      //controller: 'mainController'
     })
 
     .when('/login', {
       templateUrl: 'login.html',
-      controller: 'mainController'
+      //controller: 'mainController'
     })
 
     .when('/signUp', {
       templateUrl: 'signUp.html',
-      controller: 'mainController'
+      //controller: 'mainController'
+    })
+
+    .when('/service', {
+      templateUrl: 'service.html',
+      //controller: 'mainController'
+    })
+
+    .when('/profile', {
+      templateUrl: 'profile.html',
+      //controller: 'mainController'
     });
 });
 
-
-// services
-// $scope.services =  [
-//   {
-//     serv: 'babysit_service.jpg'
-//   },
-//   {
-//     serv: 'clean_service.jpg'
-//   },
-//   {
-//     serv: 'cook_service.jpg'
-//   },
-//   {
-//     serv: 'driver_service.jpg'
-//   },
-//   {
-//     serv:  'move_service.jpg'
-//   },
-//   {
-//     serv: 'tutor_service.jpg'
-//   }
-
-// ];
-
-
-
-// app.factory('postService', function($resource){
-//   return $resource('/api/posts/:id');
-// });
-
-// app.controller('mainController', function($scope, $rootScope, postService){
-//   $scope.posts = postService.query();
-//   $scope.newPost = "";
-
-// //used for basic read from json
-//   postService.getAll().success(function(data){
-//     $scope.posts = data;
-//   });
-
-//   $scope.post = function() {
-//     postService.save({created_by: $rootScope.current_user, text: $scope.newPost, created_at: Date.now()}, 
-//     function(){
-//       $scope.posts = postService.query();
-//       $scope.newPost = "";  
-//     });
-//   };
-//   $scope.delete = function(post)  {
-//     postService.delete({id: post._id});
-//     $scope.posts = postService.query();
-//   };
-// });
-
 app.controller('authController', function($scope, $http, $rootScope, $location){
-  $scope.user = {username: '', password: ''};
+  $scope.user = {email: '', password: ''};
   $scope.error_message = '';
 
   $scope.login = function(){
-  	$rootScope.authenticated  = true;
+    $http.post('/login', $scope.user).success(function(data){
+      if(data.state == 'success'){
+        $rootScope.authenticated = true;
+        $rootScope.current_user = data.user.local.email;
+        $location.path('/profile');
+      }
+      else{
+        $scope.error_message = data.message;
+      }
+    });
   };
 
   $scope.register = function(){
-    $http.post('/auth/signup', $scope.user).success(function(data){
+    $http.post('/signup', $scope.user).success(function(data){
       if(data.state == 'success'){
-        console.log('setting rootScope.authenticated to true');
         $rootScope.authenticated = true;
-        $rootScope.current_user = data.user.username;
-        $location.path('/');
+        $rootScope.current_user = data.user.local.email;
+        $location.path('/profile');
       }
       else{
-        console.error("error is in pennyworth.js");
         $scope.error_message = data.message;
       }
     });
