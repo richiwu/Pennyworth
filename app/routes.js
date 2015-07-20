@@ -29,7 +29,7 @@ module.exports = function(passport) {
 
     //sends failure login state back to angular
     router.get('/failure', function(req, res){
-        res.send({state: 'failure', user: null, message: "Invalid username or password"});
+        res.send({state: 'failure', user: null, message: req.flash('errorMessage')});
     });
 
    // process the signup form
