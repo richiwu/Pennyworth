@@ -25,12 +25,12 @@ app.config(function($routeProvider){
 
     .when('/login', {
       templateUrl: 'login.html',
-      //controller: 'mainController'
+      controller: 'authController'
     })
 
     .when('/signUp', {
       templateUrl: 'signUp.html',
-      //controller: 'mainController'
+      controller: 'authController'
     })
 
     .when('/service', {
@@ -56,7 +56,7 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
         $location.path('/profile');
       }
       else{
-        $scope.error_message = data.message;
+        $scope.error_message = data.message[0];
       }
     });
   };
@@ -69,8 +69,8 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
         $location.path('/profile');
       }
       else{
-        $scope.error_message = data.message;
+        $scope.error_message = data.message.toString();
       }
-    });
+    })
   };
 });
