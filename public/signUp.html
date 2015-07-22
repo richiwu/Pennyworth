@@ -11,12 +11,25 @@
 
         <!-- LOGIN FORM action="/signup" method="post" -->
         <form ng-controller="authController">
+           <div class="form-group">
+                <input type="text" class="form-control" name="name" ng-model="user.name" placeholder="Name">
+            </div>
+
+
             <div class="form-group">
                 <input type="text" class="form-control" name="email" ng-model="user.email" placeholder="Email">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Password">
             </div>
+
+
+
+            <div class="form-group">
+                <input type="password" class="form-control" name="passwordRepeat" ng-model="user.passwordRepeat" placeholder="Repeat Password">
+            </div>
+
+
 
             <!-- not in database -->
             <!-- <div class="form-group">

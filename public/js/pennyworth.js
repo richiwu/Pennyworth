@@ -1,4 +1,4 @@
-var app = angular.module('pennyworth', ['ngRoute', 'ngResource', 'selector', 'slider','gmap','star-rating']).run(function($http, $rootScope){
+var app = angular.module('pennyworth', ['ngRoute', 'ngResource', 'selector', 'slider','gmap','star-rating', 'recommendController', 'recommendService']).run(function($http, $rootScope){
 	$rootScope.authenticated = false;
 	$rootScope.current_user = "";
 
@@ -74,3 +74,5 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
     });
   };
 });
+
+

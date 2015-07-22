@@ -1,4 +1,4 @@
-<section id="profile">
+<section ng-controller="recController" id="profile">
     <div class="row">
         <div class="profile_info col-md-4">
                 <img src="images/rough/richard.png" class="profile_img img-rounded">
@@ -59,32 +59,22 @@
             <div class="profile_rec row">
                 <h3>Recommendations</h3>
 
-                <div class="entry_form">
-                    <textarea class="form-control" rows="2" placeholder="Write Recommendation.."></textarea>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
-
                 <div class="recommendation_section">
-                    <div class="panel panel-default">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">Jon T. <span id="rating_rec">Rating: 9</span></div>
-                        <div class="panel-body">
-                            <p>Richard is absolutely unreal</p>
+                    <div class="entry_form" ng-controller="recController">
+                        <textarea class="form-control" rows="2" placeholder="Write Recommendation.." ng-model="formData.text"></textarea>
+                        <button type="button" class="btn btn-primary" ng-click="createRecommendation()">Submit</button>
+
+                    <div class ="one_recommendation">
+                        <div class="panel panel-default" ng-repeat="recommendation in recommendations">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Jon T. <span id="rating_rec">Rating: 9</span></div>
+                            <div class="panel-body">
+                                <p>{{recommendation.text}}</p>
+                                <p>{{recommendation.date}}</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">Kevin R. <span id="rating_rec">Rating: 5</span></div>
-                        <div class="panel-body">
-                            <p>Richard likes turtles</p>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">Jin L. <span id="rating_rec">Rating: 1</span></div>
-                        <div class="panel-body">
-                            <p>I am too good to use this website</p>
-                        </div>
+
                     </div>
                 </div>
             </div>
