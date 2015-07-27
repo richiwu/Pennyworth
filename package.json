@@ -11,12 +11,14 @@
     "express-session": "~1.0.0",
     "method-override": "~1.0.0",
     "mongoose": "~3.8.1",
+    "mongoose-validate": "git://github.com/RGBboy/mongoose-validate.git",
     "mongoose-validator": "^1.2.0",
     "morgan": "~1.0.0",
     "passport": "~0.1.17",
     "passport-facebook": "~1.0.2",
     "passport-google-oauth": "~0.1.5",
     "passport-local": "~0.1.6",
-    "passport-twitter": "~1.0.2"
+    "passport-twitter": "~1.0.2",
+    "validator": "^3.41.2"
   }
 }

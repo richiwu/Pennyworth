@@ -1,5 +1,4 @@
 //configure strategy
-// load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 var FacebookStrategy= require('passport-facebook').Strategy;
 
@@ -12,7 +11,6 @@ var configAuth = require('./auth');
 // expose this function to our app using module.exports
 module.exports = function(passport) {
 
-    // =========================================================================
     // passport session setup ==================================================
     // =========================================================================
     // required for persistent login sessions
@@ -30,7 +28,6 @@ module.exports = function(passport) {
         });
     });
 
-    // =========================================================================
     // LOCAL SIGNUP ============================================================
     // =========================================================================
     // we are using named strategies since we have one for login and one for signup
@@ -58,33 +55,27 @@ module.exports = function(passport) {
             // check to see if theres already a user with that email
             if (user) {
                 return done(null, false, req.flash('errorMessage', 'That email is already taken.'));
-            } else {
-
+            }
+             else {
                 // if there is no user with that email
                 // create the user
                 var newUser            = new User();
-
                 // set the user's local credentials
                 newUser.local.email    = email;
                 newUser.local.password = newUser.generateHash(password);
-
                 // save the user
                 newUser.save(function(err) {
                     if (err)
                         throw err;
                     return done(null, newUser);
                 });
-            }
-
-        });    
-
+                }
+            });    
         });
-
     }));
 
 
 
-// =========================================================================
     // LOCAL LOGIN =============================================================
     // =========================================================================
     // we are using named strategies since we have one for login and one for signup
@@ -119,7 +110,9 @@ module.exports = function(passport) {
 
     }));
 
-// =========================================================================
+
+
+
     // FACEBOOK ================================================================
     // =========================================================================
     passport.use(new FacebookStrategy({

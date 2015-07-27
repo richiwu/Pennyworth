@@ -1,44 +1,50 @@
-<div class="register_content container">
+
+<div class="register_content container" >
 
     <div class="col-sm-6 col-sm-offset-3">
-
         <h1>Register</h1>
-
         <br>
-
         <!-- show any messages that come back with authentication -->
         <div ng-show="error_message != ''" class="alert alert-danger">{{error_message}}</div>
 
+       
+
+  
+
+
+
+
         <!-- LOGIN FORM action="/signup" method="post" -->
-        <form ng-controller="authController">
-           <div class="form-group">
+        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+            <!-- name -->
+           <div class="form-group" >
                 <input type="text" class="form-control" name="name" ng-model="user.name" placeholder="Name">
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="email" ng-model="user.email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Password">
-            </div>
 
-
-
-            <div class="form-group">
-                <input type="password" class="form-control" name="passwordRepeat" ng-model="user.passwordRepeat" placeholder="Repeat Password">
+            <!-- email -->
+            <div class="form-group"  ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                <input type="email" class="form-control" name="email" ng-model="user.email" placeholder="Email">
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
             </div>
 
-
-
-            <!-- not in database -->
-            <!-- <div class="form-group">
-                <input type="repeat_pw" class="form-control" name="repeat_pw"  placeholder="Repeat Password">
+            <!-- password -->
+            <div class="form-group" id="password" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Password" ng-minlength="6" ng-required>
+                <p ng-show="userForm.password.$error.minlength" class="help-block">Password is too short.</p>
             </div>
 
+            <!-- repeatPassword -->
             <div class="form-group">
-                <input type="full_name" class="form-control" name="full_name"  placeholder="Full Name">
-            </div> -->
+                <input type="password" id="passwordRepeat" class="form-control" name="passwordRepeat" ng-model="user.passwordRepeat" placeholder="Repeat Password" ng-required pw-check="password">
+            </div>
 
-            <button type="submit" class="btn btn-info btn-lg" ng-click="register()">Register</button>
+            <div class="msg-block" ng-show="myForm.$error">
+              <span class="msg-error" ng-show="myForm.passwordRepeat.$error.pwmatch">
+                Passwords don't match.
+              </span>
+            </div>
+
+            <button type="submit" class="btn btn-info btn-lg" ng-disabled="userForm.$invalid" ng-click="register()">Register</button>
         </form>
 
         <hr>
@@ -47,3 +53,43 @@
     </div>
 
 </div>
+
+
+<!-- 
+
+<form  ng-controller="formControl">
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+                        <input type="text" class="form-control" name="name" ng-model="user.name" placeholder="Name">
+                    </div>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+                        <input type="text" class="form-control" name="email" ng-model="user.email" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+                        <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+                        <input type="password" class="form-control" name="passwordRepeat" ng-model="user.passwordRepeat" ng-match="user.password"placeholder="Repeat Password">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info btn-lg" ng-click="passwordCheck(); register();">Register</button>
+        </form> -->

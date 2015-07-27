@@ -45,7 +45,7 @@ app.config(function($routeProvider){
 });
 
 app.controller('authController', function($scope, $http, $rootScope, $location){
-  $scope.user = {email: '', password: ''};
+  $scope.user = {name: '', email: '', password: '',  passwordRepeat: ''};
   $scope.error_message = '';
 
   $scope.login = function(){
@@ -56,7 +56,7 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
         $location.path('/profile');
       }
       else{
-        $scope.error_message = data.message[0];
+        $scope.error_message = data.message.toString();
       }
     });
   };
@@ -75,4 +75,17 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
   };
 });
 
-
+app.directive('pwCheck', [function () {
+    return {
+      require: 'ngModel',
+      link: function (scope, elem, attrs, ctrl) {
+        var firstPassword = '#' + attrs.pwCheck;
+        elem.add(firstPassword).on('keyup', function () {
+          scope.$apply(function () {
+            var v = elem.val()===$(firstPassword).val();
+            ctrl.$setValidity('pwmatch', v);
+          });
+        });
+      }
+    }
+  }]);

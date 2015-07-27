@@ -12,6 +12,7 @@
 
 		<!-- stylesheets -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> 
 		<link rel="stylesheet" href="stylesheets/style.css">
 		<link rel="stylesheet" href="stylesheets/profile.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
@@ -58,7 +59,7 @@
 	    <script src="js/controller/star-rating.js"></script>
 	    <script src="js/controller/recommendController.js"></script>
 
-
+	    <script src="http://code.angularjs.org/1.2.6/angular.js"></script> 
 
 	    <!-- services -->
 	    <script src="js/services/recommends.js"></script>
@@ -119,7 +120,6 @@
 					<p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#/login">Login</a></p>
 					<p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#/signUp">Register</a></p>
 					
-
 					<p class="navbar-right navbar-text" ng-show="authenticated"><a href="#" ng-click="signout()">Logout</a></p>
 					<p class="navbar-right navbar-text" ng-show="authenticated"><a href="#/profile">Profile</a></p>
 					<p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{current_user}}</p>

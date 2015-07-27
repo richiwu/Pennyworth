@@ -1,14 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var validate = require('mongoose-validator');
-
-// var nameValidate = [
-//     validate({
-//     validator: 'isLength',
-//     arguments: [3, 50],
-//     message: 'Name should be between {ARGS[0]} and {ARGS[1]} characters'
-//   }),
-// ];
+var validate = require('mongoose-validate');
 
 
 
@@ -17,7 +9,7 @@ var userSchema = mongoose.Schema({
 
     local             : {
         name          : String,
-        email         : String,
+        email         : {type: String, required: true, validate: [validate.email, 'invalid email address'] },
         password      : String,
         passwordRepeat: String
     },
@@ -28,7 +20,7 @@ var userSchema = mongoose.Schema({
         email         : String,
         name          : String
     }
-});('')
+});
 
 // methods ======================
 // generating a hash
